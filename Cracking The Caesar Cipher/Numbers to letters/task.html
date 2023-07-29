@@ -1,0 +1,26 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Throughout history, people enjoyed sending secret messages. A message that only a few people can read ensures privacy, even when enemies are everywhere. Your friend has taken up ciphering as a hobby, so you will need to learn about them too. He has no good reason for this. He thinks they're neat!</p>
+<p>In this first stage, you will convert a list of numbers into a message. Each number points to a letter in the lowercase English alphabet, and the order is simple:</p>
+<p><samp><span class="math-tex">\[0 = a, 1 = b, ... 24 = y, 25 = z\]</span></samp></p>
+<p>He tells you that he likes to sing the <a href="https://en.wikipedia.org/wiki/Alphabet_song" rel="noopener noreferrer nofollow" target="_blank">Alphabet song</a> and count on his fingers to find the correct number. Fortunately, Python has a module <a href="https://docs.python.org/3/library/string.html" rel="noopener noreferrer nofollow" target="_blank">string</a> that includes <code class="java">string.ascii_lowercase</code>. Searching for a string is faster than singing this song.</p>
+<h5 id="objectives">Objectives</h5>
+<p>In this stage, your program should:</p>
+<ol>
+<li>Take an input: A string of integers separated by spaces <code class="java">' '</code></li>
+<li>Use <code class="java">string.ascii_lowercase</code> to decipher this message</li>
+<li>Print the deciphered message as a string.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code class="language-no-highlight">&gt; 0 1 2
+abc</code></pre>
+<p><strong>Example 2:</strong></p>
+<pre><code class="language-no-highlight">&gt; 7 4 11 11 14
+hello</code></pre>
+<p><strong>Example 3:</strong></p>
+<pre><code class="language-no-highlight">&gt; 2 7 4 4 18 4 2 0 10 4
+cheesecake</code></pre>
+
+</div>

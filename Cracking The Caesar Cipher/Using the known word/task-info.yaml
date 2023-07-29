@@ -1,0 +1,78 @@
+type: edu
+files:
+- name: solution.py
+  visible: true
+  text: '# Write your code here'
+  learner_created: false
+- name: test/__init__.py
+  visible: false
+  learner_created: false
+- name: test/tests.py
+  visible: false
+  text: |
+    from hstest import CheckResult, TestedProgram, StageTest, dynamic_test, WrongAnswer
+    import string
+
+
+    def encoder_3(right_shift, message):
+        # making the encoded message
+        # string 'butterscotch' becomes string 'y r q q b o p z l q z e'
+        # this uses the string.ascii_lowercase string which is 'abcdefghijklmnopqrstuvwxyz'
+        # and adds a shift
+        # an encoded message will make an IndexError if the deciphering shift leaves the string's range
+        # so a modulus is used
+        message = message.lower()
+        message_list = list(message)
+        message_encoded_nums = [string.ascii_lowercase.index(letter) + right_shift for letter in message]
+        message_encoded = [string.ascii_lowercase[index % 26] for index in message_encoded_nums]
+        message_encoded = ' '.join(message_encoded)
+        return message_encoded
+
+
+    class DecipherTest(StageTest):
+        test_data = [
+            # shift, first message, second message
+            # first message MUST contain substring 'butterscotch'
+            # x is used in place of ' ' spaces
+            [-5, 'Myxmomxmadexsomexbutterscotchxpie', 'Myxmomxmadexsomexpie'],
+            [-2, 'Mmmxbutterscotchxisxsoxtasty', 'Pleasexcomextryxaxslice'],
+            [2, 'Ixlovexthexsmellxofxbutterscotch', 'Thexhousexsmellsxlikexpie'],
+            [3, 'Somethingxsomethingxbutterscotch', 'myxdogxisxsuperxlazy'],
+            [15, 'HerexIxmentionxbutterscotch', 'Ifxyouxdoxnotxhurryxmyxdogxwillxeatxthexpie'],
+            [4, 'barkxbarkxbutterscotch', 'Youxbetterxhurryxifxyouxwantxsome'],
+            [6, 'butterscotchxandxpiexcrustxisxaxgreatxcombo', 'Myxdogxwillxeatxitxanyxhourxnow'],
+            [7, 'butterscotch', 'afterxshexrunsxoutxofxtreats']
+        ]
+
+        @dynamic_test(data=test_data)
+        def test(self, *x):
+            encoded_message_1 = encoder_3(right_shift=x[0], message=x[1])
+            encoded_message_2 = encoder_3(right_shift=x[0], message=x[2])
+            pr = TestedProgram()
+            pr.start()
+            output = pr.execute(stdin=f'{encoded_message_1}\n{encoded_message_2}')
+            if not output:
+                raise WrongAnswer('Your program did not print anything.')
+            if not output.isascii():
+                raise WrongAnswer('This string contains non-ascii values.')
+            output_cleaned = output.lower().strip().replace(' ', '')
+            if 'butterscotch' in output_cleaned:
+                raise WrongAnswer('This may be the first deciphered message. '
+                                  'Please only print the second deciphered message.')
+            check = x[2].lower().replace('x', ' ').replace(' ', '') in output_cleaned
+            return CheckResult(check, f'Wrong message returned.\nYou printed: {output}.')
+
+
+    if __name__ == '__main__':
+        DecipherTest().run_tests()
+  learner_created: false
+- name: tests.py
+  visible: false
+  text: |-
+    from test.tests import DecipherTest
+
+    if __name__ == '__main__':    DecipherTest().run_tests()
+  learner_created: false
+feedback_link: https://hyperskill.org/projects/365/stages/2164/implement#comment
+status: Unchecked
+record: -1

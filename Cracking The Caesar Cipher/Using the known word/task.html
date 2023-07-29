@@ -1,0 +1,37 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Your friend decided it is not fun to shift everything by 3 or pass along a shift number. The simple integer makes the encoded word that follows seem less fancy.</p>
+<p>He will no longer be providing you with a shift number. Instead, he will give you a pair of messages:</p>
+<ol>
+<li>A sentence with the word <code class="java">butterscotch</code> somewhere in it, with a secret shift value <code class="java">X</code>.</li>
+<li>Another sentence (your target) with the same shift value <code class="java">X</code>.</li>
+</ol>
+<p>Also, he can now write encoded messages so quickly that he has also decided to send more than one word at a time.</p>
+<p>As there is no space (<code class="java">" "</code>) in this alphabet, <code class="java">x</code> will be used instead. <code class="java">hello world</code> would be written as <code class="java">helloxworld</code> before your friend applies his shift cipher.</p>
+<p></p><div class="alert alert-primary">After deciphering, please replace any <code class="java">x</code> with <code class="java">" "</code>.</div>
+<h5 id="objectives">Objectives</h5>
+<p>In this stage, your program should:</p>
+<ol>
+<li>Take an input: A string of characters separated by spaces <code class="java">' '</code></li>
+<li>Identify the shift number by finding the secret word <code class="java">butterscotch</code></li>
+<li>Take the second input: an encoded string of characters separated by spaces <code class="java">' '</code></li>
+<li>Use the shift number to decipher the second message</li>
+<li>Replace any <code class="java">x</code> letters in the deciphered message with <code class="java">" "</code> space</li>
+<li>Print the second deciphered message.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code class="language-no-highlight">&gt; r d c r t r c r f i j c x t r j c g z y y j w x h t y h m c u n j
+&gt; r r r
+mmm</code></pre>
+<p><strong>Example 2:</strong></p>
+<pre><code class="language-no-highlight">&gt; r d c r t r c r f i j c x t r j c g z y y j w x h t y h m c u n j
+&gt; x r j q q x c y f x y d
+smells tasty</code></pre>
+<p><strong>Example 3:</strong></p>
+<pre><code class="language-no-highlight">&gt; r d c r t r c r f i j c x t r j c g z y y j w x h t y h m c u n j
+&gt; u q j f x j c h t r j c y w d c f c x q n h j
+please come try a slice
+</code></pre>
+</div>

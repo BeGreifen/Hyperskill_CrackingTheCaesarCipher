@@ -1,0 +1,52 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Things are heating up. Something special is in the works. The messages are becoming more critical.</p>
+<p>To handle this increasingly sensitive information, your friend has decided to upgrade his paper strips. He has agreed to produce a <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" rel="noopener noreferrer nofollow" target="_blank">Vigenère cipher</a> using handmade <a href="https://en.wikipedia.org/wiki/Tabula_recta" rel="noopener noreferrer nofollow" target="_blank">tabula recta (or Vigenère square)</a>.</p>
+<p><img alt="" height="600" name="600px-Vigenère_square_shading.svg.png" src="https://ucarecdn.com/4439a951-5b0c-40c6-add3-a9213a4236ad/" width="600"/></p>
+<p><em>A Vigenère square. (<a href="https://en.wikipedia.org/wiki/File:Vigen%C3%A8re_square_shading.svg" rel="noopener noreferrer nofollow" target="_blank">source</a>)</em></p>
+<p>A Vigenère square is similar to the two strips of paper he used for the Caesar cipher, but it is made of a bunch of horizontal rows, not just two. Each row shifts one step further to the left, represented by a letter.</p>
+<p>A repeating keyword is then used to encode letters by drawing a line straight down from that letter in the top row to the row in the keyword, like in a game of Battleship. This is easier to explain with examples:</p>
+<p><code class="language-python">encode(message: "abcd", keyword: "AAAA")</code> -&gt; <code class="language-python">"abcd"</code>. Every letter in the keyword is in the top row A.</p>
+<p><code class="language-python">encode(message: "abcd", keyword: "BBBB")</code> -&gt; <code class="language-python">"bcde"</code>. Every letter in the keyword is in the next row down, B.</p>
+<p><code class="language-python">encode(message: "abcd", keyword: "AABB")</code> -&gt; <code class="language-python">"abde"</code>. The first two letters are enciphered with the A row. The second two are with the B row.</p>
+<p><code class="language-python">encode(message: "abcd", keyword: "AB")</code> -&gt; <code class="language-python">"acce"</code>. The keyword <code class="language-python">AB</code> repeats until the message ends, becoming <code class="language-python">ABAB</code>.</p>
+<p><code class="language-python">encode(message:"abcd", keyword: "CAT")</code> -&gt; <code class="language-python">"cbvf"</code>. As mentioned above, the keyword <code class="language-python">CAT</code> is repeated and becomes <code class="language-python">CATC</code>.</p>
+<p>Thankfully, your friend is giving you some hints to help you. He gives you a regular message, the length of the keyword, and the same message encoded. The real power, he thinks, will be that he can write a message using just his Vigenère square, and you can automate a keyword-finding process to unlock his secret messages much faster than anyone who has a pen and paper.</p>
+<h5 id="objectives">Objectives</h5>
+<p>In this stage, your program should decode the Vigenère cipher text. This one is similar to the Caesar cipher but uses a repeating keyword to control the shifts.:</p>
+<ol>
+<li>Take an input: An integer representing the length of the keyword</li>
+<li>Take an input: A string of characters separated by spaces <code class="language-python">' '</code></li>
+<li>Take an input: That exact string of characters separated by spaces <code class="language-python">' '</code>, but encoded</li>
+<li>Take an input: Your target message is encoded. A string of characters separated by spaces <code class="language-python">' '</code></li>
+<li>Use the keyword to decode your target message</li>
+<li>Replace any <code class="language-python">x</code> letters in the deciphered message with <code class="language-python">" "</code> space</li>
+<li>Print the deciphered message.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p>The greater-than symbol followed by a space (<code class="language-python">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code class="language-python">&gt; 1
+&gt; e a s y
+&gt; e a s y
+&gt; t h e x k e y w o r d x w a s x a
+the keyword was a</code></pre>
+<p><strong>Example 2:</strong></p>
+<pre><code class="language-python">&gt; 1
+&gt; l e s s x e a s y
+&gt; m f t t y f b t z
+&gt; u i f y l f z x p s e y x b t y c
+the keyword was b</code></pre>
+<p><strong>Example 3:</strong></p>
+<pre><code class="language-python">&gt; 2
+&gt; a b c d
+&gt; a c c e
+&gt; t i i t x t h p u m d y l p o l x g a n i m i b r
+this should look familiar</code></pre>
+<p><strong>Example 4:</strong></p>
+<pre><code class="language-python">&gt; 3
+&gt; t e s t
+&gt; d i q d
+&gt; c i a b i r h x c c x
+secret test</code></pre>
+</div>
