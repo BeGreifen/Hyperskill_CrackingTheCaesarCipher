@@ -73,13 +73,4 @@ if __name__ == "__main__":
                         filemode='w'  # Use 'w' mode to overwrite the log file on each run, or 'a' to append
                         )
     logging.info("**** solution started ****")
-    # for inti in range(15, 18):
-    #     print(inti)
-    #     print("".join(
-    #         numb_list_to_char_list(
-    #             get_cesar(
-    #                 string_list_to_numb("algorithms"), inti)
-    #         )
-    #     )
-    #     )
     main()
