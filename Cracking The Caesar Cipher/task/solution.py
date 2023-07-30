@@ -6,7 +6,7 @@ import inspect
 def decorator(func):
     def wrap(*args, **kwargs):
         logging.info(
-            f"{func.__name__} - line no: {inspect.getframeinfo(inspect.currentframe()).lineno} with args: {args}, kwargs: {kwargs}")
+            f"{func.__name__} - line no: {inspect.getframeinfo(inspect.currentframe().f_back).lineno} with args: {args}, kwargs: {kwargs}")
         # Log the function name and arguments
 
         # Call the original function
