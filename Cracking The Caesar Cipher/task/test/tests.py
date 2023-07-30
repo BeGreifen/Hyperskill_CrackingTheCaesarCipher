@@ -1,32 +1,37 @@
-import logging
 from hstest import CheckResult, TestedProgram, StageTest, dynamic_test, WrongAnswer
 import string
 
 
-def encoder_1(message):
+def encoder_2(message):
     # making the encoded message
-    # string 'cheesecake' becomes list [2, 7, 4, 4, 18, 4, 2, 0, 10, 4]
-    # then becomes string '2 7 4 4 18 4 2 0 10 4' with space delimiter
-    # does not encode ' ' spaces
-    # please use 'x' instead of ' ' if spaces are desired
+    # string 'butterscotch' becomes string 'y r q q b o p z l q z e'
+    # this uses the string.ascii_lowercase string which is 'abcdefghijklmnopqrstuvwxyz'
+    # and adds a shift
+    left_shift = 3
+    # an encoded message will make an IndexError if the deciphering shift leaves the string's range
+    # so a modulus is used
     message = message.lower()
-    message_encoded = [string.ascii_lowercase.index(letter) for letter in message]
-    message_encoded_for_stdin = ' '.join([str(i) for i in message_encoded])
-    return message_encoded_for_stdin
+    message_list = list(message)
+    message_encoded_nums = [string.ascii_lowercase.index(letter) - left_shift for letter in message]
+    message_encoded = [string.ascii_lowercase[index % 26] for index in message_encoded_nums]
+    message_encoded = ' '.join(message_encoded)
+    return message_encoded
 
 
 class DecipherTest(StageTest):
     test_data = [
+        'Butterscotch'
         'Cheesecake',
         'Hello',
         'World',
         'Dog',
-        'Mousse'
+        'Mousse',
+        'myxdogxisxsuperxlazy'
     ]
 
     @dynamic_test(data=test_data)
     def test(self, x):
-        encoded_message = encoder_1(x)  # a string full of ints separated by spaces
+        encoded_message = encoder_2(x)  # a string with letters separated by spaces
         pr = TestedProgram()
         pr.start()
         output = pr.execute(stdin=encoded_message)

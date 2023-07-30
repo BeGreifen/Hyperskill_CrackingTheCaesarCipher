@@ -68,6 +68,18 @@ files:
 
     if __name__ == '__main__':    DecipherTest().run_tests()
   learner_created: false
+- name: app.log
+  visible: true
+  text: |
+    2023-07-30 09:45:27,038 - INFO - **** solution started ****
+    2023-07-30 09:45:27,062 - INFO - main - line no: 16 with args: (), kwargs: {}
+    2023-07-30 09:45:27,062 - INFO - string_list_to_numb - line no: 16 with args: (['2', '7', '4', '4', '18', '4', '2', '0', '10', '4'],), kwargs: {}
+    2023-07-30 09:45:27,066 - INFO - string_list_to_numb
+    2023-07-30 09:45:27,066 - INFO - ['2', '7', '4', '4', '18', '4', '2', '0', '10', '4']
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/365/stages/2163/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 30 Jul 2023 07:47:12 UTC"
 record: -1
