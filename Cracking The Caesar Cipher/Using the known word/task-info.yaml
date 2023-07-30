@@ -73,6 +73,29 @@ files:
 
     if __name__ == '__main__':    DecipherTest().run_tests()
   learner_created: false
+- name: app.log
+  visible: true
+  text: |
+    2023-07-30 10:08:06,048 - INFO - **** solution started ****
+    2023-07-30 10:08:06,055 - INFO - main - line no: 85 with args: (), kwargs: {}
+    2023-07-30 10:08:08,436 - INFO - string_list_to_numb - line no: 65 with args: (['a', 's', 'v'],), kwargs: {}
+    2023-07-30 10:08:08,437 - INFO - string_list_to_numb
+    2023-07-30 10:08:08,437 - INFO - ['a', 's', 'v']
+    2023-07-30 10:08:08,437 - INFO - string_list_to_numb returned: [0, 18, 21]
+    2023-07-30 10:08:08,437 - INFO - get_cesar - line no: 65 with args: ([0, 18, 21], 3), kwargs: {}
+    2023-07-30 10:08:08,437 - INFO - [3, 21, 24]
+    2023-07-30 10:08:08,437 - INFO - get_cesar returned: [3, 21, 24]
+    2023-07-30 10:08:08,437 - INFO - numb_list_to_char_list - line no: 65 with args: ([3, 21, 24],), kwargs: {}
+    2023-07-30 10:08:08,437 - INFO - ['d', 'v', 'y']
+    2023-07-30 10:08:08,437 - INFO - numb_list_to_char_list returned: ['d', 'v', 'y']
+    2023-07-30 10:08:08,437 - INFO - output_result - line no: 66 with args: (['d', 'v', 'y'],), kwargs: {}
+    2023-07-30 10:08:08,438 - INFO - dvy
+    2023-07-30 10:08:08,438 - INFO - output_result returned: dvy
+    2023-07-30 10:08:08,438 - INFO - main returned: None
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/365/stages/2164/implement#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 30 Jul 2023 09:37:47 UTC"
+record: 3

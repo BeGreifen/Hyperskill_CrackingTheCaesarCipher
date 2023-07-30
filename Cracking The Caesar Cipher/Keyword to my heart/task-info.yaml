@@ -89,6 +89,58 @@ files:
 
     if __name__ == '__main__':    DecipherTest().run_tests()
   learner_created: false
+- name: app.log
+  visible: true
+  text: |
+    2023-07-30 11:37:47,035 - INFO - **** solution started ****
+    2023-07-30 11:37:47,064 - INFO - main - line no: 90 with args: (), kwargs: {}
+    2023-07-30 11:37:47,065 - WARNING - found shift value of: 21 , wpoozmnxjoxc
+    2023-07-30 11:37:47,065 - INFO - output_result - line no: 80 with args: (['m', 'y', 'x', 'm', 'o', 'm', 'x', 'm', 'a', 'd', 'e', 'x', 's', 'o', 'm', 'e', 'x', 'p', 'i', 'e'],), kwargs: {}
+    2023-07-30 11:37:47,065 - INFO - output_result returned: my mom made some pie
+    2023-07-30 11:37:47,065 - INFO - main returned: None
+    2023-07-30 11:37:47,067 - INFO - **** solution started ****
+    2023-07-30 11:37:47,068 - INFO - main - line no: 90 with args: (), kwargs: {}
+    2023-07-30 11:37:47,069 - WARNING - found shift value of: 24 , zsrrcpqamraf
+    2023-07-30 11:37:47,070 - INFO - output_result - line no: 80 with args: (['p', 'l', 'e', 'a', 's', 'e', 'x', 'c', 'o', 'm', 'e', 'x', 't', 'r', 'y', 'x', 'a', 'x', 's', 'l', 'i', 'c', 'e'],), kwargs: {}
+    2023-07-30 11:37:47,070 - INFO - output_result returned: please come try a slice
+    2023-07-30 11:37:47,070 - INFO - main returned: None
+    2023-07-30 11:37:47,072 - INFO - **** solution started ****
+    2023-07-30 11:37:47,072 - INFO - main - line no: 90 with args: (), kwargs: {}
+    2023-07-30 11:37:47,073 - WARNING - found shift value of: 2 , dwvvgtueqvej
+    2023-07-30 11:37:47,073 - INFO - output_result - line no: 80 with args: (['t', 'h', 'e', 'x', 'h', 'o', 'u', 's', 'e', 'x', 's', 'm', 'e', 'l', 'l', 's', 'x', 'l', 'i', 'k', 'e', 'x', 'p', 'i', 'e'],), kwargs: {}
+    2023-07-30 11:37:47,073 - INFO - output_result returned: the house smells like pie
+    2023-07-30 11:37:47,073 - INFO - main returned: None
+    2023-07-30 11:37:47,074 - INFO - **** solution started ****
+    2023-07-30 11:37:47,076 - INFO - main - line no: 90 with args: (), kwargs: {}
+    2023-07-30 11:37:47,076 - WARNING - found shift value of: 3 , exwwhuvfrwfk
+    2023-07-30 11:37:47,077 - INFO - output_result - line no: 80 with args: (['m', 'y', 'x', 'd', 'o', 'g', 'x', 'i', 's', 'x', 's', 'u', 'p', 'e', 'r', 'x', 'l', 'a', 'z', 'y'],), kwargs: {}
+    2023-07-30 11:37:47,077 - INFO - output_result returned: my dog is super lazy
+    2023-07-30 11:37:47,077 - INFO - main returned: None
+    2023-07-30 11:37:47,079 - INFO - **** solution started ****
+    2023-07-30 11:37:47,080 - INFO - main - line no: 90 with args: (), kwargs: {}
+    2023-07-30 11:37:47,081 - WARNING - found shift value of: 15 , qjiitghrdirw
+    2023-07-30 11:37:47,081 - INFO - output_result - line no: 80 with args: (['i', 'f', 'x', 'y', 'o', 'u', 'x', 'd', 'o', 'x', 'n', 'o', 't', 'x', 'h', 'u', 'r', 'r', 'y', 'x', 'm', 'y', 'x', 'd', 'o', 'g', 'x', 'w', 'i', 'l', 'l', 'x', 'e', 'a', 't', 'x', 't', 'h', 'e', 'x', 'p', 'i', 'e'],), kwargs: {}
+    2023-07-30 11:37:47,082 - INFO - output_result returned: if you do not hurry my dog will eat the pie
+    2023-07-30 11:37:47,082 - INFO - main returned: None
+    2023-07-30 11:37:47,084 - INFO - **** solution started ****
+    2023-07-30 11:37:47,084 - INFO - main - line no: 90 with args: (), kwargs: {}
+    2023-07-30 11:37:47,084 - WARNING - found shift value of: 4 , fyxxivwgsxgl
+    2023-07-30 11:37:47,088 - INFO - output_result - line no: 80 with args: (['y', 'o', 'u', 'x', 'b', 'e', 't', 't', 'e', 'r', 'x', 'h', 'u', 'r', 'r', 'y', 'x', 'i', 'f', 'x', 'y', 'o', 'u', 'x', 'w', 'a', 'n', 't', 'x', 's', 'o', 'm', 'e'],), kwargs: {}
+    2023-07-30 11:37:47,088 - INFO - output_result returned: you better hurry if you want some
+    2023-07-30 11:37:47,088 - INFO - main returned: None
+    2023-07-30 11:37:47,091 - INFO - **** solution started ****
+    2023-07-30 11:37:47,091 - INFO - main - line no: 90 with args: (), kwargs: {}
+    2023-07-30 11:37:47,092 - WARNING - found shift value of: 6 , hazzkxyiuzin
+    2023-07-30 11:37:47,092 - INFO - output_result - line no: 80 with args: (['m', 'y', 'x', 'd', 'o', 'g', 'x', 'w', 'i', 'l', 'l', 'x', 'e', 'a', 't', 'x', 'i', 't', 'x', 'a', 'n', 'y', 'x', 'h', 'o', 'u', 'r', 'x', 'n', 'o', 'w'],), kwargs: {}
+    2023-07-30 11:37:47,092 - INFO - output_result returned: my dog will eat it any hour now
+    2023-07-30 11:37:47,092 - INFO - main returned: None
+    2023-07-30 11:37:47,098 - INFO - **** solution started ****
+    2023-07-30 11:37:47,100 - INFO - main - line no: 90 with args: (), kwargs: {}
+    2023-07-30 11:37:47,101 - WARNING - found shift value of: 7 , ibaalyzjvajo
+    2023-07-30 11:37:47,101 - INFO - output_result - line no: 80 with args: (['a', 'f', 't', 'e', 'r', 'x', 's', 'h', 'e', 'x', 'r', 'u', 'n', 's', 'x', 'o', 'u', 't', 'x', 'o', 'f', 'x', 't', 'r', 'e', 'a', 't', 's'],), kwargs: {}
+    2023-07-30 11:37:47,101 - INFO - output_result returned: after she runs out of treats
+    2023-07-30 11:37:47,101 - INFO - main returned: None
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/365/stages/2165/implement#comment
 status: Unchecked
 record: -1
