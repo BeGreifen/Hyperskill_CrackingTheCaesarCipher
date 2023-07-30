@@ -142,5 +142,8 @@ files:
     2023-07-30 11:37:47,101 - INFO - main returned: None
   learner_created: true
 feedback_link: https://hyperskill.org/projects/365/stages/2165/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 30 Jul 2023 19:08:49 UTC"
 record: -1

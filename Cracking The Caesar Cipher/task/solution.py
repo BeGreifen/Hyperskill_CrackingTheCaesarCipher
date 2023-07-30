@@ -24,12 +24,12 @@ def decorator(func):
 @decorator
 def output_result(result_list: list):
     result = "".join(result_list)
-    print(result)
-    return result
+    print(result.replace("x"," "))
+    return result.replace("x"," ")
 
 
 # Example usage
-@decorator
+# @decorator
 def string_list_to_numb(char_list: list) -> list:
     result = []
     if len(char_list) > 1:
@@ -40,7 +40,7 @@ def string_list_to_numb(char_list: list) -> list:
     return result
 
 
-@decorator
+# @decorator
 def get_cesar(input_numb: list, offset=0) -> list:
     result_list = []
     if isinstance(input_numb, list):
@@ -51,7 +51,7 @@ def get_cesar(input_numb: list, offset=0) -> list:
     return result_list
 
 
-@decorator
+# @decorator
 def numb_list_to_char_list(input_numb: list) -> list:
     result_list = []
     for numb in input_numb:
@@ -71,7 +71,7 @@ def create_dict(word: str) -> dict:
     return dict_find_shift
 
 
-@decorator
+# @decorator
 def create_vigenere_cipher_key(word: str, key_len: int) -> list:
     key_repeated = []
     while len(key_repeated) < key_len:
@@ -81,10 +81,17 @@ def create_vigenere_cipher_key(word: str, key_len: int) -> list:
     return result
 
 
-@decorator
-def decode_vigenere_cipher(list_of_encrypted_numbs: str, list_of_key_shifts) -> list:
+# @decorator
+def decode_vigenere_cipher(list_of_encrypted_numbs: list, list_of_key_shifts) -> list:
     result = []
-    logging.info(list_of_key_shifts)
+    for n, k in zip(list_of_encrypted_numbs, list_of_key_shifts):
+        result.append((n+k) % 26)
+    output_result(numb_list_to_char_list(result))
+    return result
+
+
+def encode_vigenere_cipher(list_of_encrypted_numbs: list, list_of_key_shifts) -> list:
+    result = []
     for n, k in zip(list_of_encrypted_numbs, list_of_key_shifts):
         result.append((n-k) % 26)
     output_result(numb_list_to_char_list(result))
@@ -106,15 +113,29 @@ def task3():
     output_result(result)
 
 
-@decorator
-def main():
-    # result = output_result(numb_list_to_char_list(input().split()))
-    # len_key = input()
+def topics():
     raw_key = input("key:")
     numb_encrypted = input("to encrypt:").replace(" ", "x")
     numb_encrypted = string_list_to_numb(numb_encrypted)
     numb_vigenere_cipher_key = create_vigenere_cipher_key(raw_key, len(numb_encrypted))
     decode_vigenere_cipher(numb_encrypted, numb_vigenere_cipher_key)
+
+
+@decorator
+def main():
+    key_len = int(input("key len:"))
+    raw_word = input("raw word:").split(" ")
+    encrypted_word = input("encrypted word:").split(" ")
+    num_raw_word = string_list_to_numb(raw_word)
+    num_encrypted_word = string_list_to_numb(encrypted_word)
+    num_key = []
+    for char_num in range(key_len):
+        num_key.append(num_raw_word[char_num] - num_encrypted_word[char_num])
+    # print(numb_list_to_char_list(num_key))
+    num_encrypted_word = string_list_to_numb(input("encrypted word:").split(" "))
+    str_key = "".join(numb_list_to_char_list(num_key))
+    num_key = create_vigenere_cipher_key(str_key, len(num_encrypted_word))
+    decode_vigenere_cipher(num_encrypted_word, num_key)
 
 
 if __name__ == "__main__":
