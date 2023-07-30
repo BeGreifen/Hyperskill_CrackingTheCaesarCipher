@@ -24,8 +24,8 @@ def decorator(func):
 @decorator
 def output_result(result_list: list):
     result = "".join(result_list)
-    print(result.replace("x"," "))
-    return result.replace("x"," ")
+    print(result.replace("x", " "))
+    return result.replace("x", " ")
 
 
 # Example usage
@@ -85,7 +85,7 @@ def create_vigenere_cipher_key(word: str, key_len: int) -> list:
 def decode_vigenere_cipher(list_of_encrypted_numbs: list, list_of_key_shifts) -> list:
     result = []
     for n, k in zip(list_of_encrypted_numbs, list_of_key_shifts):
-        result.append((n+k) % 26)
+        result.append((n + k) % 26)
     output_result(numb_list_to_char_list(result))
     return result
 
@@ -93,32 +93,9 @@ def decode_vigenere_cipher(list_of_encrypted_numbs: list, list_of_key_shifts) ->
 def encode_vigenere_cipher(list_of_encrypted_numbs: list, list_of_key_shifts) -> list:
     result = []
     for n, k in zip(list_of_encrypted_numbs, list_of_key_shifts):
-        result.append((n-k) % 26)
+        result.append((n - k) % 26)
     output_result(numb_list_to_char_list(result))
     return result
-
-
-def task3():
-    butterscotch_dict = create_dict("butterscotch")
-    lower_input = "".join(input().lower().split())
-    print(lower_input)
-    shift = 0
-    for k, v in butterscotch_dict.items():
-        if lower_input.find(k) > -1:
-            shift = butterscotch_dict[k]
-            logging.warning(f"found shift value of: {shift} , {k}")
-    result: list = numb_list_to_char_list(
-        get_cesar(
-            string_list_to_numb(input().lower().split()), -shift))
-    output_result(result)
-
-
-def topics():
-    raw_key = input("key:")
-    numb_encrypted = input("to encrypt:").replace(" ", "x")
-    numb_encrypted = string_list_to_numb(numb_encrypted)
-    numb_vigenere_cipher_key = create_vigenere_cipher_key(raw_key, len(numb_encrypted))
-    decode_vigenere_cipher(numb_encrypted, numb_vigenere_cipher_key)
 
 
 @decorator
@@ -134,6 +111,7 @@ def main():
     # print(numb_list_to_char_list(num_key))
     num_encrypted_word = string_list_to_numb(input("encrypted word:").split(" "))
     str_key = "".join(numb_list_to_char_list(num_key))
+    logging.info("key is:" + str_key)
     num_key = create_vigenere_cipher_key(str_key, len(num_encrypted_word))
     decode_vigenere_cipher(num_encrypted_word, num_key)
 
